@@ -1,5 +1,17 @@
 <?php
 
+// Opti proposition : 
+/* function convertSize($bytes, $precision = 2) {
+    $units = ['B','kB','MB','GB','TB','PB','EB','ZB','YB','HB'];
+    $base = 1024;
+    $i = 0;
+    while (($bytes / $base) > 0.9) {
+        $bytes = $bytes / $base;
+        $i++;
+    }
+    return round($bytes, $precision).$units[$i];
+} */
+
 function convertSize($bytes, $precision = 2) {
   $kilobytes = $bytes / 1024;
 
@@ -28,7 +40,7 @@ function convertSize($bytes, $precision = 2) {
   $petabytes = $terabytes / 1024;
 
   if ($petabytes < 1024) {
-    return round($petabytes, $precision) . ' TB';
+    return round($petabytes, $precision) . ' TB'; // not TB but PB
   }
 
   $exabytes = $petabytes / 1024;
@@ -46,7 +58,7 @@ function convertSize($bytes, $precision = 2) {
   $yottabytes = $zettabytes / 1024;
 
   if ($yottabytes < 1024) {
-    return round($yottabytes, $precision) . ' ZB';
+    return round($yottabytes, $precision) . ' ZB'; // not ZB but YB
   }
 
   $hellabyte = $yottabytes / 1024;
