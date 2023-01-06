@@ -7,8 +7,8 @@ namespace App;
 class Rover
 {
     private string $direction;
-    private int $y;
-    private int $x;
+    private int $y; //pour le PSR, les variables ne sont pas bonne, on ne comprends pas le sens directement.
+    private int $x; //Pareil que pour la variable $y
 
     public function __construct(int $x, int $y, string $direction)
     {
@@ -19,12 +19,12 @@ class Rover
 
     public function receive(string $commandsSequence): void
     {
-        $commandsSequenceLenght = strlen($commandsSequence);
+        $commandsSequenceLenght = strlen($commandsSequence); //PHPCS : Evitez les blocs pour une meilleure lisibilité
         for ($i = 0; $i < $commandsSequenceLenght; ++$i) {
             $command = substr($commandsSequence, $i, 1);
             if ($command === "l" || $command === "r") {
                 // Rotate Rover
-                if ($this->direction === "N") {
+                if ($this->direction === "N") { //Je préfère l'utilisation de switch case que de if/else if
                     if ($command === "r") {
                         $this->direction = "E";
                     } else {
@@ -51,7 +51,7 @@ class Rover
                 }
             } else {
                 // Displace Rover
-                $displacement1 = -1;
+                $displacement1 = -1; //Cette variable est inutile, autant faire $displacement directement pour éviter la ligne 59
 
                 if ($command === "f") {
                     $displacement1 = 1;
