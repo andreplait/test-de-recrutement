@@ -24,6 +24,6 @@ class Rental
         return $this->movie;
     }
 
-    private Movie $movie;
+    private Movie $movie; //Déclaration en debut de class
     private int $daysRented;
 }
