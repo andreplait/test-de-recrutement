@@ -2,7 +2,7 @@
 #footer {
   text-shadow: 0.55rem 0.55rem #FFFFFF;
 }
-
+// en scss l'utilisation de &: est plus intéressante que de répeter.
 #footer .form__footer {
   margin: 1rem;
   text-shadow: 0.55rem 0.55rem #15FFF5;
